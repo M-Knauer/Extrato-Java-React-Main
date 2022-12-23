@@ -1,4 +1,4 @@
-import TransferenciasCard from "./components/SalesCard"
+import TransferenciasCard from "./components/ExtratoCard"
 
 function App() {
   return (

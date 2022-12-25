@@ -30,7 +30,14 @@ function TransferenciasCard() {
                 setTransferencias(response.data.content)
             })   
     }, [minDate, maxDate, id, nome])
-
+    
+    let total = 0
+    let totalPeriodo = 0
+    transferencias.map(tr => {
+        totalPeriodo += tr.valor
+        total +=  tr.valor
+    })
+    
     return (
         <div className="dsmeta-card">
             <h2 className="dsmeta-sales-title">Transferencias</h2>
@@ -75,6 +82,11 @@ function TransferenciasCard() {
 
             <div>
                 <table className="dsmeta-sales-table">
+                    <thead>
+                        <tr>
+                            <td colSpan={4} className="show576"> Saldo total: R$ {total.toFixed(2)} &emsp; Saldo no preíodo: R$ {totalPeriodo.toFixed(2)}</td>
+                        </tr>
+                    </thead>
                     <thead>
                         <tr>
                             <th className="show576">Dados</th>
